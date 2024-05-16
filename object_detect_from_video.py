@@ -49,15 +49,16 @@ def show_detected_objects(img, bounding_box_ids, all_bounding_boxes, class_ids, 
         if class_ids[i] == 2:
             cv2.rectangle(img, (x, y), (x+w, y+h), (255, 0, 0), 2)
             class_with_confidence = 'CAR ' + str(int(confidence_values[i] * 100)) + '%'
-            cv2.putText(img, class_with_confidence, (x, y-10), cv2.FONT_HERSHEY_COMPLEX_SMALL, 0.5, (255, 0, 0), 1)
+            cv2.putText(img, class_with_confidence, (x, y-10), cv2.FONT_HERSHEY_COMPLEX_SMALL, 0.5, (0, 255, 0), 1)
 
         if class_ids[i] == 0:
-            cv2.rectangle(img, (x, y), (x+w, y+h), (255, 0, 0), 2)
+            cv2.rectangle(img, (x, y), (x+w, y+h), (0, 10, 250), 2)
             class_with_confidence = 'PERSON ' + str(int(confidence_values[i] * 100)) + '%'
-            cv2.putText(img, class_with_confidence, (x, y-10), cv2.FONT_HERSHEY_COMPLEX_SMALL, 0.5, (255, 0, 0), 1)
+            cv2.putText(img, class_with_confidence, (x, y-10), cv2.FONT_HERSHEY_COMPLEX_SMALL, 0.5, (0, 150, 240), 1)
 
 
-capture = cv2.VideoCapture('yolo_test.mp4')
+# capture = cv2.VideoCapture('yolo_test.mp4')
+capture = cv2.VideoCapture('test_video_6.mp4')
 
 
 # there are 80 (90) possible output classes
